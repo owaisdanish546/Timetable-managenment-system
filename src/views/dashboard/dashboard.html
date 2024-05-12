@@ -1,0 +1,78 @@
+<!-- layout.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable Management System</title>
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" id="home" href="#" onclick="loadPageContent('/view/home','home');">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" id="teachers" href="#"
+                            onclick="loadPageContent('/view/teachers','teachers').then(()=>{return populateTeachersTable()}); ">Teachers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="courses" href="#"
+                            onclick="loadPageContent('/view/courses','courses').then(()=>{return populateCoursesTable()})">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="venues" href="#"
+                            onclick="loadPageContent('/view/venues','venues').then(()=>{return populateVenuesTable()});">Venues</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="lectures" href="#"
+                            onclick="loadPageContent('/view/lectures','lectures').then(()=>{ return populate()}).then(()=>{return populateLecturesTable()})">Lectures</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Settings
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content placeholder for specific pages -->
+    <div id="pageContent"></div>
+
+
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/script/dashboard/dashsboard.js"></script>
+    <script src="/script/dashboard/populateLecturesFields.js"></script>
+    <script src="/script/dashboard/populateLecturesTable.js"></script>
+    <script src="/script/dashboard/populateTeachersTable.js"></script>
+    <script src="/script/dashboard/populateCoursesTable.js"></script>
+    <script src="/script/dashboard/populateVenuesTable.js"></script>
+
+    <script>
+        // Load home content by default
+        window.onload = function () {
+            loadPageContent('/view/home','home');
+        };
+    </script>
+
+</body>
+
+</html>

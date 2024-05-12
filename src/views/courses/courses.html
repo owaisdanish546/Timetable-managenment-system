@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <!-- <link href="/bootstrap/bootstrap.min.css" rel="stylesheet" /> -->
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Course Information</h2>
+            </div>
+            <div class="card-body">
+                <form id="courseForm" >
+                    <div class="mb-3">
+                        <label for="courseCode" class="form-label">Course Code:</label>
+                        <input type="text" id="courseCode" name="courseCode" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="courseName" class="form-label">Course Name:</label>
+                        <input type="text" id="courseName" name="courseName" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="semester" class="form-label">Semester:</label>
+                        <select id="semester" name="semester" class="form-control" required>
+                            <option value="">Select Semester</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="creditHours" class="form-label">Credit Hours:</label>
+                        <select id="creditHours" name="creditHours" class="form-control" required>
+                            <option value="">Select Credit Hours</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" id = "btnSubmit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-3" id="courseRecord">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Course Records</h2>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="text-align: center;">Course Code</th>
+                            <th style="text-align: center;">Course Name</th>
+                            <th style="text-align: center;">Semester</th>
+                            <th style="text-align: center;">Credit Hours</th>
+                            <th style="text-align: center;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="courseTableBody">
+                        <!-- Rows will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/script/courses/courses.js"></script>
+</body>
+</html>

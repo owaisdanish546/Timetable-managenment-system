@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venues</title>
+    <!-- <link href="/bootstrap/bootstrap.min.css" rel="stylesheet" /> -->
+
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Venue Information</h2>
+            </div>
+            <div class="card-body">
+                <form id="venueForm">
+                    <div class="mb-3">
+                        <label for="venueName" class="form-label">Venue Name:</label>
+                        <input type="text" id="venueName" name="venueName" class="form-control" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" id = "btnSubmit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Inside the Venues HTML file -->
+
+<div class="container mt-3" id="venueRecord">
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Venue Records</h2>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">Venue Name</th>
+                        <th style="text-align: center;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="venueTableBody">
+                    <!-- Rows will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+    <script src="/script/venues/venues.js"></script>
+</body>
+</html>

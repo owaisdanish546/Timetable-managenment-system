@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Information</title>
+    <!-- Link to Bootstrap CSS -->
+    <!-- <link href="/bootstrap/bootstrap.min.css" rel="stylesheet" /> -->
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Teacher Information</h2>
+            </div>
+            <div class="card-body">
+                <form id="teacherForm">
+                    <div class="mb-3">
+                        <label for="teacherId" class="form-label">Teacher ID:</label>
+                        <input type="text" id="teacherId" name="teacherId" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="teacherName" class="form-label">Teacher Name:</label>
+                        <input type="text" id="teacherName" name="teacherName" class="form-control" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" id="submitBtn" class="btn btn-primary">Submit</button>
+                    </div>
+                    <div id="errorMessage" style="color: red;"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-3" id="teacherRecord">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Teacher Records</h2>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="text-align: center;">Teacher ID</th>
+                            <th style="text-align: center;">Teacher Name</th>
+                            <th style="text-align: center;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="teacherTableBody">
+                        <!-- Rows will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="/script/teachers/teachers.js"></script>
+</body>
+</html>

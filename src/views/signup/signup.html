@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-light">
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center mb-4">Sign Up</h5>
+                        <form id="signupForm">
+                            <div class="mb-3">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="John" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="surname" class="form-label">Surname</label>
+                                <input type="text" class="form-control" id="surname" name="surname" placeholder="Doe" required/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="example@example.com" required/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" oninput="validatePassword()" class="form-control" id="password" name="password" required/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" oninput="validatePassword()" class="form-control" id="confirmPassword" name="confirmPassword" required />
+                                <div id="passwordError" style="font-size: small;"></div>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" id="signupButton" class="btn btn-primary">
+                                    Sign Up
+                                </button>
+                            </div>
+                            <div id="errorMessage" class="text-danger mt-3"></div>
+                            <!-- Link to login page -->
+                            <div class="text-center mt-3">
+                                <p>Don't have an account? <a href="/">login</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+    <script src="/script/signup/signup.js">  </script>
+</body>
+
+</html>

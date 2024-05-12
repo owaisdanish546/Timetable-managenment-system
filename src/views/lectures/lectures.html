@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture Form</title>
+    <!-- Add your CSS links or stylesheets here -->
+    <style>
+        /* Center the spinner horizontally under the button */
+        .spinner-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            display: none; /* Initially hidden */
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Lecture Information</h2>
+            </div>
+            <div class="card-body">
+                <form id="lectureForm" >
+                    <div class="mb-3">
+                        <label for="teacherName" class="form-label">Teacher Name:</label>
+                        <select id="teacherName" name="teacherName" class="form-select" required>
+                            <!-- Populate with options dynamically -->
+                            <option value="">Select Teacher Name</option>
+                            <!-- Add options dynamically using JavaScript -->
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="course" class="form-label">Course:</label>
+                        <select id="course" name="course" class="form-select" required>
+                            <!-- Populate with options dynamically -->
+                            <option value="">Select Course</option>
+                            <!-- Add options dynamically using JavaScript -->
+                        </select>
+                    </div>
+                    <!-- <div class="mb-3"> -->
+                        <!-- <label for="venue" class="form-label">Venue:</label> -->
+                        <!-- <select id="venue" name="venue" class="form-select" required> -->
+                            <!-- Populate with options dynamically -->
+                            <!-- <option value="">Select Venue</option> -->
+                            <!-- Add options dynamically using JavaScript -->
+                        <!-- </select> -->
+                    <!-- </div> -->
+                    <div class="mb-3">
+                        <label for="section" class="form-label">Section:</label>
+                        <select id="section" name="section" class="form-select" required>
+                            <!-- Populate with options dynamically -->
+                            <option value="">Select Section</option>
+                            <!-- Add options dynamically using JavaScript -->
+                        </select>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit"  class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+                
+                <!-- <button type="submit" onclick="populate()" class="btn btn-primary">Populate</button> -->
+
+                <!-- Button to generate timetable -->
+                <div class="text-center mt-3">
+                    <button id="generateTimetableBtn" class="btn btn-success">Generate Timetable</button>
+                    <!-- Spinner container -->
+                    <div class="spinner-container">
+                        <div id="spinner" class="spinner"></div>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <a id="download"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-3" id="lecturesRecord">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Lecture Records</h2>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <!-- <th style="text-align: center;">Lecture ID</th> -->
+                            <th style="text-align: center;">Teacher ID</th>
+                            <th style="text-align: center;">Teacher Name</th>
+                            <th style="text-align: center;">Course_code</th>
+                            <th style="text-align: center;">Section</th>
+                            <th style="text-align: center;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lectureTableBody">
+                        <!-- Rows will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add your JavaScript file or script tags here -->
+    <script src="/script/lectures/lectures.js"></script>
+</body>
+</html>
